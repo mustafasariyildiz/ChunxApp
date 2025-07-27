@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChunxApp", "ChunxApp.csproj", "{2221A264-92D3-540E-3E7F-C67412314B52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2221A264-92D3-540E-3E7F-C67412314B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2221A264-92D3-540E-3E7F-C67412314B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2221A264-92D3-540E-3E7F-C67412314B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2221A264-92D3-540E-3E7F-C67412314B52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF110EDB-5DB9-4CB1-A5A3-7EF2520E9DE0}
+	EndGlobalSection
+EndGlobal
