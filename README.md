@@ -5,7 +5,7 @@
 ## ✅ Features
 
 - 🔹 Dynamically splits single or multiple files into chunks based on file size.
-- 🔹 Uses a dynamic and optimal chunk size (between **1MB** and **5MB**) determined by the file's total size.
+- 🔹 Uses a dynamic and optimal chunk size (between **1MB** and **8MB**) determined by the file's total size.
 - 🔹 Pluggable storage provider architecture via `IStorageProvider` interface.
 - 🔹 Persists metadata for each file and chunk using SQLite.
 - 🔹 Reassembles original files from chunks and verifies using SHA256 checksum.
