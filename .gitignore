@@ -1,0 +1,39 @@
+# Build artifacts
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dotnet specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.db
+
+# Environment files
+.env
+
+# Files folder (optional - chunked and restored files not tracked)
+files/chunks/
+files/restored/
+
+# SQLite database
+*.sqlite
+*.db

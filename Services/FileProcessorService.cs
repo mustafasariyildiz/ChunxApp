@@ -24,7 +24,7 @@ public class FileProcessorService
         _storageProviders = storageProviders;
     }
 
-    public async Task ProcessFileAsync(string filePath, int chunkSize = 1024 * 1024)
+    public async Task ProcessFileAsync(string filePath)
     {
         if (!File.Exists(filePath))
         {
@@ -35,6 +35,7 @@ public class FileProcessorService
         var fileBytes = await File.ReadAllBytesAsync(filePath);
         var checksum = ChecksumHelper.CalculateChecksum(fileBytes);
         var fileInfo = new FileInfo(filePath);
+        var chunkSize = ChunkHelper.GetOptimalChunkSize(fileBytes.Length);
 
         var fileMetadata = new FileMetadata
         {
@@ -77,4 +78,20 @@ public class FileProcessorService
 
         _logger.LogInformation("Finished processing file: {FileName}", fileMetadata.FileName);
     }
+    
+    public async Task ProcessMultipleFilesAsync(IEnumerable<string> filePaths)
+    {
+        foreach (var path in filePaths)
+        {
+            if (File.Exists(path))
+            {
+                await ProcessFileAsync(path);
+            }
+            else
+            {
+                _logger.LogWarning("File not found: {Path}", path);
+            }
+        }
+    }
+
 }

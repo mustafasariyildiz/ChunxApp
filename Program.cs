@@ -33,7 +33,8 @@ while (true)
 {
     Console.WriteLine("Select an option:");
     Console.WriteLine("1 - Upload File");
-    Console.WriteLine("2 - Restore File");
+    Console.WriteLine("2 - Upload Multiple Files");
+    Console.WriteLine("3 - Restore File");
     Console.WriteLine("0 - Exit");
     Console.Write("Your choice: ");
     var choice = Console.ReadLine();
@@ -47,6 +48,19 @@ while (true)
             await fileProcessor.ProcessFileAsync(path!);
     }
     else if (choice == "2")
+    {
+        Console.WriteLine("Enter file paths separated by semicolon (;):");
+        var input = Console.ReadLine();
+        var filePaths = input?
+            .Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            ?? Array.Empty<string>();
+
+        if (filePaths.Any())
+        {
+            await fileProcessor.ProcessMultipleFilesAsync(filePaths);
+        }
+    }
+    else if (choice == "3")
     {
         var allFiles = await repository.GetAllFileMetadataAsync();
         if (!allFiles.Any())
